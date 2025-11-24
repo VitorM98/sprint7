@@ -1,11 +1,32 @@
+import { Router } from '@angular/router';
+import { AuthService } from './../../services/auth.service';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
-  imports: [],
+  standalone: true,
+  imports: [FormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
 
+constructor(private authService:AuthService, private router:Router){}
+
+login(){
+  this.authService.login(this.usuario).subscribe({
+    next:(response)=>{
+      this.router.navigate(["/home"]);
+    },
+    error:(err)=>{
+      alert("Login e/ou senha incorreto(s). Tente novamente.");
+    }
+  })
+}
+
+usuario = {
+  nome:'',
+  senha:''
+}
 }

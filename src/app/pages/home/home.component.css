@@ -1,21 +1,21 @@
-body{
-    background-image: url(ranger.png);
-    background-size:contain;
+body {
+    background-image: url(/public/ranger.png);
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
 }
 
-header{
+header {
     display: flex;
 }
 
-.logOutContainer{
+.logOutContainer {
     margin-left: 93%;
     margin-top: 15px;
 }
 
-.logOut{
+.logOut {
     width: 20px;
 }
 
@@ -42,11 +42,12 @@ header{
 .modal {
     position: fixed;
     top: 0;
-    left: -250px; /* escondido inicialmente */
+    left: -250px;
+    /* escondido inicialmente */
     width: 250px;
     height: 100%;
     background-color: white;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
     transition: left 0.3s ease;
     z-index: 1000;
 }
@@ -97,9 +98,11 @@ header{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(128, 128, 128, 0.5); /* cinza semi-transparente */
+    background-color: rgba(128, 128, 128, 0.5);
+    /* cinza semi-transparente */
     z-index: 999;
-    display: none; /* escondido por padrão */
+    display: none;
+    /* escondido por padrão */
 }
 
 /* Quando o menu está ativo, mostra o overlay */
@@ -108,15 +111,15 @@ header{
 }
 
 
-.logoFord{
-width: 50%;
-margin-left: auto;
-margin-right: auto;
-margin-top: 10px;
+.logoFord {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
 }
 
 
-.backgroundImage{
+.backgroundImage {
     width: 100%;
 }
 
@@ -129,7 +132,7 @@ margin-top: 10px;
     transform: translate(-50%, -50%);
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     z-index: 500;
     font-family: Arial, sans-serif;
     width: 30%;
@@ -168,7 +171,7 @@ margin-top: 10px;
 @media screen and (max-width: 950px) {
 
     body {
-        background-size:contain;
+        background-size: contain;
         background-position: center;
     }
 
@@ -242,20 +245,20 @@ margin-top: 10px;
     }
 
     .modal.ativo {
-    left: 0;
-}
+        left: 0;
+    }
 
-#btn-menu.ativo .linha:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
+    #btn-menu.ativo .linha:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
 
-#btn-menu.ativo .linha:nth-child(2) {
-    opacity: 0;
-}
+    #btn-menu.ativo .linha:nth-child(2) {
+        opacity: 0;
+    }
 
-#btn-menu.ativo .linha:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
+    #btn-menu.ativo .linha:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
 
-    
+
 }
