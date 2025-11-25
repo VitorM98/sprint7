@@ -15,6 +15,72 @@
         </div>
     </nav>
     <div class="logOutContainer">
-       <a href=""><img (click)="logout()" class="logOut" src="desligar.png" alt=""></a>
+        <a href=""><img (click)="logout()" class="logOut" src="desligar.png" alt=""></a>
     </div>
 </header>
+
+<h1 class="infoDashboard">Dashboard FORD</h1>
+
+
+<div class="cardsContainer">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h1 class="card-title">Veículo</h1>
+                    <select class="selectCar" (change)="onVehicleChange($event)">
+            <option *ngFor="let v of vehicles" [value]="v.vehicle">{{ v.vehicle }}</option>
+        </select>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h1 class="card-title">Total de Vendas</h1>
+            <p class="card-text">{{ salesTotal }} Unid</p>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h1 class="card-title">Conectados</h1>
+            <p class="card-text">{{ connectedTotal }} Unid</p>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h1 class="card-title">Update Software</h1>
+            <p class="card-text">{{ updateTotal }} Unid</p>
+        </div>
+    </div>
+</div>
+
+<img class="car-image" [src]="carImage" *ngIf="carImage">
+
+<footer class="footer-section">
+  <table class="vehicle-table">
+    <thead>
+      <tr>
+        <th>Código - VIN</th>
+        <th>Odômetro</th>
+        <th>Nível de Combustível</th>
+        <th>Status</th>
+        <th>Lat.</th>
+        <th>Long.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="vin-field-container">
+                    <select class="vin-input-display" [formControl]="vinInput">
+                        <option *ngFor="let vin of availableVins" [value]="vin">{{ vin }}</option>
+                    </select>
+        </td>
+        <td>{{ vinData?.odometro }} km</td>
+            <td>{{ vinData?.nivelCombustivel }}%</td>
+            <td>{{ vinData?.status }}</td>
+            <td>{{ vinData?.lat }}</td>
+            <td>{{ vinData?.long }}</td>
+      </tr>
+    </tbody>
+  </table>
+  </footer>

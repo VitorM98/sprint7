@@ -9,6 +9,13 @@ header {
 
 .logOut {
     width: 20px;
+        transition: transform 0.3s ease; 
+}
+
+.logOut:hover {
+    transform: scale(1.2);
+    /* Opcional: Garante que o cursor mude para indicar interatividade */
+    cursor: pointer;
 }
 
 
@@ -115,3 +122,134 @@ header {
     width: 100%;
 }
 
+.selectCar{
+    width: 60%;
+    height: 40px;
+    border-radius: 4px;
+}
+
+
+/* DASHBOARD */
+
+.infoDashboard{
+    color: #0066CC;
+    text-align: center;
+    font-size: 50px;
+}
+
+.cardsContainer{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 200px 50px 200px ;
+}
+
+.card {
+    border: 2px solid black;
+    padding: 50px;
+    border-radius: 4px;
+    
+}
+
+.card-title{
+    color: #7a7878;
+}
+
+.card-text{
+    color: #7a7878;
+    font-size: 25px;
+}
+
+.car-image{
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+/* footer */
+.footer-section {
+  /* Fundo azul escuro */
+  background-color: #0d47a1; 
+  color: white; 
+  font-family: Arial, sans-serif;
+  /* Largura total e grudado nas pontas */
+  width: 100%; 
+  margin: 0;
+  padding: 0; 
+  /* Posicionamento no final da tela (footer fixo) */
+  position: fixed; 
+  bottom: 0px; 
+  left: 0;
+}
+
+.vehicle-table {
+  width: 100%; 
+  border-collapse: collapse; 
+  text-align: center; 
+  font-size: 20px; 
+  margin: 0;
+  padding: 0;
+}
+
+.vehicle-table thead tr {
+  background-color: #0d47a1; 
+  color: white; 
+}
+
+.vehicle-table th {
+  padding: 8px 0; 
+  font-weight: bold; 
+  text-transform: uppercase; 
+  white-space: nowrap; 
+  border-right: 3px solid rgba(255, 255, 255, 0.3); /* Borda branca sutil */
+}
+
+/* Linha de dados: Fundo branco para os dados, Fundo azul para a linha de baixo (que é o footer-section) */
+.vehicle-table tbody tr {
+  background-color: white; 
+  color: black; 
+}
+
+.vehicle-table td {
+  padding: 10px 0; /* Aumentar um pouco o padding para dar mais altura */
+  border: none;
+  text-align: center; 
+  color: black; /* Garante que os dados sejam pretos */
+}
+
+/* Estilo para o campo VIN (coluna da esquerda) */
+.vin-field-container {
+  /* Não tem padding, o padding está no input */
+  padding: 0; 
+  text-align: center; /* Centraliza o input dentro da célula */
+}
+
+/* Estilo do Campo de Input para ficar IDÊNTICO à imagem */
+.vin-input-display {
+  /* O visual do campo é de um input normal */
+  display: block; /* Ocupa a largura máxima disponível para ele */
+  width: 90%; /* Ajuste a largura para que ocupe a maior parte da célula */
+  height: 30px;
+  
+  /* Estilos do Campo: Borda e Fundo Branco */
+  border: 2px solid #a8a7a7; /* Borda cinza clara/sutil (simula a borda da imagem) */
+  background-color: white; 
+  padding: 2px 4px; /* Padding interno do texto */
+  
+  /* Texto dentro do campo */
+  color: black; 
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  text-align: left; /* O VIN está alinhado à esquerda dentro do campo */
+  
+  /* Centraliza o input dentro do <td> */
+  margin: 0 auto; 
+}
+
+/* Configuração da linha azul final (Abaixo da linha de dados) */
+.footer-section::after {
+  content: "";
+  display: block;
+  height: 30px; /* Altura da barra azul escura inferior */
+  background-color: #0d47a1; /* Mesma cor do footer */
+  width: 100%;
+}

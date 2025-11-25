@@ -18,6 +18,13 @@ header {
 
 .logOut {
     width: 20px;
+        transition: transform 0.3s ease; 
+}
+
+.logOut:hover {
+    transform: scale(1.2);
+    /* Opcional: Garante que o cursor mude para indicar interatividade */
+    cursor: pointer;
 }
 
 /* Estilo básico do botão hambúrguer */
