@@ -1,7 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Usuario } from '../models/usuario.model';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
+import { Router } from '@angular/router';
+
+const key = "auth-user"
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +13,21 @@ export class AuthService {
 
   private apiUrl = "http://localhost:3001";
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private router:Router) { }
 
   login(usuario:Pick<Usuario,'nome'|'senha'>):Observable<Usuario>{
-    return this.http.post<Usuario>(`${this.apiUrl}/login`,usuario);
+    return this.http.post<Usuario>(`${this.apiUrl}/login`,usuario).pipe(tap(response =>{
+      sessionStorage.setItem(key, JSON.stringify(response))
+    }));
+  }
+
+  logout():void{
+    sessionStorage.removeItem(key);
+    this.router.navigate(['/login'])
+  }
+
+  isLogged():boolean{
+    const user = sessionStorage.getItem(key);
+    return user ? true:false;
   }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,5 +16,10 @@ export class DashboardComponent {
     menu?.classList.toggle('ativo');
     btn?.classList.toggle('ativo');
     overlay?.classList.toggle('ativo');
+  }
+       constructor(private authService:AuthService){}
+
+    logout():void{
+      this.authService.logout();
   }
 }
