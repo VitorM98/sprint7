@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 header {
     display: flex;
 }
@@ -140,7 +145,10 @@ header {
 .cardsContainer{
     display: flex;
     justify-content: space-between;
-    margin: 30px 200px 50px 200px ;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .card {
@@ -252,4 +260,145 @@ margin-right: auto;
   height: 30px; /* Altura da barra azul escura inferior */
   background-color: #0d47a1; /* Mesma cor do footer */
   width: 100%;
+}
+
+@media (max-width: 950px) {
+    /* ================================
+      HEADER E DASHBOARD (Ajustes)
+      ================================
+    */
+    .infoDashboard {
+        font-size: 36px; 
+        margin-top: 20px;
+    }
+
+    .cardsContainer {
+        flex-direction: column; 
+        margin: 20px 5% 30px 5%; 
+        align-items: center; 
+        gap: 20px; 
+    }
+
+    .card {
+        width: 80%; 
+        max-width: 400px; 
+        padding: 20px; 
+        text-align: center; 
+    }
+    
+    /* ... (outros estilos de header/card) ... */
+
+    /* ================================
+      FOOTER (LAYOUT EM COLUNA)
+      ================================
+    */
+
+    .footer-section {
+        /* CORREÇÃO: Remove o posicionamento fixo para evitar sobreposição */
+        position: static; 
+        margin-top: 30px; /* Adiciona margem superior para separar do conteúdo */
+        padding-bottom: 30px; /* Garante que o conteúdo não seja cortado pela barra azul */
+    }
+
+    /* Torna a tabela, linhas e células elementos de bloco com largura total */
+    .vehicle-table,
+    .vehicle-table tbody,
+    .vehicle-table tr,
+    .vehicle-table td,
+    .vehicle-table th {
+        display: block; 
+        width: 100%; 
+        box-sizing: border-box;
+    }
+
+    /* Oculta o cabeçalho original */
+    .vehicle-table thead {
+        display: none; 
+    }
+
+    /* Estilo de cada linha */
+    .vehicle-table tr {
+        margin-bottom: 10px; 
+        border: 1px solid #ccc; 
+        background-color: white;
+    }
+
+    /* Estilo de cada célula de dados (td) */
+    .vehicle-table td {
+        position: relative;
+        padding-left: 50%; /* Espaço para o rótulo */
+        padding-right: 10px;
+        text-align: right; 
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border: none;
+        border-bottom: 1px solid #eee;
+        color: black; 
+        font-size: 16px;
+    }
+
+    /* Remove a borda do último campo de cada linha */
+    .vehicle-table tr > td:last-child {
+        border-bottom: none;
+    }
+
+    /* Rótulo da Coluna usando o data-label do HTML */
+    .vehicle-table td::before {
+        /* AGORA USAMOS O ATRIBUTO data-label */
+        content: attr(data-label); 
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        width: 40%; 
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        color: #0d47a1; 
+    }
+    
+    /* Configuração do Input VIN (Primeira célula) */
+    .vin-field-container {
+        padding: 0; 
+        text-align: right;
+    }
+    
+    .vin-input-display {
+        display: inline-block;
+        width: auto;
+        min-width: 50%; 
+        max-width: 95%;
+        margin: 0; 
+        font-size: 14px;
+        height: 30px; 
+        vertical-align: middle; 
+        text-align: left;
+        padding: 2px 4px;
+    }
+
+.car-image{
+    width: 100%;
+}
+}
+
+
+@media (max-width: 1875px) {
+    /* Otimiza a largura da tela reduzindo as margens laterais fixas */
+    .cardsContainer {
+        margin-left: 5%; /* Altera de 100px fixos para 5% */
+        margin-right: 5%; /* Altera de 100px fixos para 5% */
+    }
+    
+    /* Garante que o tamanho da imagem se ajuste melhor em telas grandes */
+    .car-image {
+        max-width: 90%; 
+    }
+    
+    .card {
+        padding: 40px; /* Leve redução no padding do card */
+    }
+
+    .footer-section{
+        position: static;
+    }
 }

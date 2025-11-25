@@ -70,17 +70,17 @@
     </thead>
     <tbody>
       <tr>
-        <td class="vin-field-container">
-                    <select class="vin-input-display" [formControl]="vinInput">
-                        <option *ngFor="let vin of availableVins" [value]="vin">{{ vin }}</option>
-                    </select>
+        <td class="vin-field-container" data-label="CÓDIGO - VIN">
+          <select class="vin-input-display" [formControl]="vinInput">
+            <option *ngFor="let vin of availableVins" [value]="vin">{{ vin }}</option>
+          </select>
         </td>
-        <td>{{ vinData?.odometro }} km</td>
-            <td>{{ vinData?.nivelCombustivel }}%</td>
-            <td>{{ vinData?.status }}</td>
-            <td>{{ vinData?.lat }}</td>
-            <td>{{ vinData?.long }}</td>
+        <td data-label="ODÔMETRO">{{ vinData?.odometro }} km</td>
+        <td data-label="NÍVEL DE COMBUSTÍVEL">{{ vinData?.nivelCombustivel }}%</td>
+        <td data-label="STATUS">{{ vinData?.status }}</td>
+        <td data-label="LAT.">{{ vinData?.lat }}</td>
+        <td data-label="LONG.">{{ vinData?.long }}</td>
       </tr>
     </tbody>
   </table>
-  </footer>
+</footer>
