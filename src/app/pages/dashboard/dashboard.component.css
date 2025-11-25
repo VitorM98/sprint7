@@ -262,6 +262,27 @@ margin-right: auto;
   width: 100%;
 }
 
+@media (max-width: 1875px) {
+    /* Otimiza a largura da tela reduzindo as margens laterais fixas */
+    .cardsContainer {
+        margin-left: 5%; /* Altera de 100px fixos para 5% */
+        margin-right: 5%; /* Altera de 100px fixos para 5% */
+    }
+    
+    /* Garante que o tamanho da imagem se ajuste melhor em telas grandes */
+    .car-image {
+        max-width: 90%; 
+    }
+    
+    .card {
+        padding: 40px; /* Leve redução no padding do card */
+    }
+
+    .footer-section{
+        position: static;
+    }
+}
+
 @media (max-width: 950px) {
     /* ================================
       HEADER E DASHBOARD (Ajustes)
@@ -382,23 +403,3 @@ margin-right: auto;
 }
 
 
-@media (max-width: 1875px) {
-    /* Otimiza a largura da tela reduzindo as margens laterais fixas */
-    .cardsContainer {
-        margin-left: 5%; /* Altera de 100px fixos para 5% */
-        margin-right: 5%; /* Altera de 100px fixos para 5% */
-    }
-    
-    /* Garante que o tamanho da imagem se ajuste melhor em telas grandes */
-    .car-image {
-        max-width: 90%; 
-    }
-    
-    .card {
-        padding: 40px; /* Leve redução no padding do card */
-    }
-
-    .footer-section{
-        position: static;
-    }
-}
