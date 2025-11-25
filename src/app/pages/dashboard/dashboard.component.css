@@ -1,0 +1,117 @@
+header {
+    display: flex;
+}
+
+.logOutContainer {
+    margin-left: 93%;
+    margin-top: 15px;
+}
+
+.logOut {
+    width: 20px;
+}
+
+
+/* Estilo básico do botão hambúrguer */
+#btn-menu {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+    position: relative;
+}
+
+.linha {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #32a68a;
+    transition: all 0.3s ease;
+}
+
+/* Estilo do modal lateral */
+.modal {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    /* escondido inicialmente */
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+/* Conteúdo do menu */
+.modal-conteudo {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+}
+
+.modal-conteudo a {
+    color: #32a68a;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.2s ease;
+    padding: 8px 0px 8px 8px;
+    font-weight: bolder;
+    margin-top: 10px;
+}
+
+.modal-conteudo a:hover {
+    background-color: #a4adb3;
+    padding: 10px 0px 10px 10px;
+    width: 96%;
+}
+
+/* Classe ativa para mostrar o menu */
+.modal.ativo {
+    left: 0;
+}
+
+#btn-menu.ativo .linha:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+#btn-menu.ativo .linha:nth-child(2) {
+    opacity: 0;
+}
+
+#btn-menu.ativo .linha:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.5);
+    /* cinza semi-transparente */
+    z-index: 999;
+    display: none;
+    /* escondido por padrão */
+}
+
+/* Quando o menu está ativo, mostra o overlay */
+.overlay.ativo {
+    display: block;
+}
+
+.logoFord {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+
+.backgroundImage {
+    width: 100%;
+}
+

@@ -7,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
- 
+  toggleMenu(): void {
+    const menu = document.getElementById('menuModal');
+    const btn = document.getElementById('btn-menu');
+    const overlay = document.getElementById('overlay');
+
+    menu?.classList.toggle('ativo');
+    btn?.classList.toggle('ativo');
+    overlay?.classList.toggle('ativo');
+  }
 }
